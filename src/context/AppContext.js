@@ -12,13 +12,14 @@ export default function AppContextProvider({children}){
 
 //data filling pending
     
-    async function fetchBlogPosts(page = 1){
+    async function fetchBlogPosts(page){
         setLoading(true);
         let url = `${baseUrl}?page=${page}`;
         try{
 
             const result = await fetch(url);
             const data = await result.json();
+            console.log("Printing the data")
             console.log(data);
             setPage(data.page);
             setPosts(data.posts);
@@ -37,9 +38,10 @@ export default function AppContextProvider({children}){
         setLoading(false);
     }
 
-    function handlePageChange(page){
-        setPage(page);
-        fetchBlogPosts(page);
+    function handlePageChange(newPage){
+        console.log("call to handlePageChange")
+        setPage(newPage);
+        fetchBlogPosts(newPage);
     }
 
     const value = {
@@ -57,7 +59,10 @@ export default function AppContextProvider({children}){
         
     }
 //step 2
-    return <AppContext.Provider value={value}>{children}</AppContext.Provider>
+    return <AppContext.Provider value={value}>
+        <div className="font-extrabold">{page}</div>
+        {children}
+        </AppContext.Provider>
 
 }
 

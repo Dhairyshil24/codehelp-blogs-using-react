@@ -7,9 +7,6 @@ import Card from "./Card"
 const Blogs = () => {
   //consume 
   const {posts,loading} = useContext(AppContext);
-  console.log("printing the blogs component");
-  console.log(posts);
-
   return(
 
     <div>
