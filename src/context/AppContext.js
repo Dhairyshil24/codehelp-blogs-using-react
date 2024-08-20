@@ -60,8 +60,7 @@ export default function AppContextProvider({children}){
     }
 //step 2
     return <AppContext.Provider value={value}>
-        <div className="font-extrabold">{page}</div>
-        {children}
+            {children}
         </AppContext.Provider>
 
 }

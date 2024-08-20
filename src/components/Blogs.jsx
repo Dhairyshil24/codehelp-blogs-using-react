@@ -9,9 +9,9 @@ const Blogs = () => {
   const {posts,loading} = useContext(AppContext);
   return(
 
-    <div>
+    <div className="w-11/12 max-w-[670px] flex flex-col gap-y-7 mt-[120px] mb-[70px]">
         {
-            loading ? (<Spinner/>):(
+            loading ? (<Spinner className="flex items-center justify-center"/>):(
                 posts.length === 0 ? (<div>
                     <p>No Post Found</p>
                 </div>) : (posts.map((post)=>(

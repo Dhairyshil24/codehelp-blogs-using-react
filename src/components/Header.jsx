@@ -1,9 +1,9 @@
 const Header = () => {
 
     return(
-        <div className="bg-violet-300">
-            <header className="flex justify-center">
-                <h1 className="font-bold italic">CodeHelp Blogs</h1>
+        <div className="w-full border shadow-md py-4 fixed top-0 bg-white">
+            <header className="text-center">
+                <h1 className="text-3xl font-bold uppercase">CodeHelp Blogs</h1>
             </header>
         </div>
     );
