@@ -4,8 +4,8 @@ import "../index.css"
   
   const Spinner = () =>  {
 	return (
-	  <div>
-        <div className='spinner'>
+	  <div className='h-[700px] justify-center items-center'>
+        <div className='flex justify-center items-center font-bold text-3xl'>
         Loading ...
         </div>
 	  </div>
