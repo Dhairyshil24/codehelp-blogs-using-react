@@ -17,10 +17,12 @@ const CategoryPage = () => {
                 <button
                 onClick={()=> navigation(-1)}
                 >Back</button>
+              </div>
+              
                 <h2>
                     Blogs of <span>#{category}</span>
                 </h2>
-              </div>
+              
               <Blogs/>
               <Pagination/>
         </div>

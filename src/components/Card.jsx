@@ -14,7 +14,10 @@ const Card = ({post}) => {
            <p className="font-bold text-lg flex items-center"><span>{post.title}</span><FcApproval className="ml-1"/></p>
            </NavLink>
            <p className="text-sm">
-            By <span className="italic">{post.author}</span> on <span className="underline font-bold">{post.category}</span>
+            By <span className="italic">{post.author}</span> on
+            <NavLink to={`/categories/${post.category.replaceAll(" ","-")}`}>
+             <span className="underline font-bold">{post.category}</span>
+             </NavLink>
            </p>
            <p className="text-sm">
             Posted on <span>{post.date}</span>
@@ -22,7 +25,11 @@ const Card = ({post}) => {
            <p className="text-md py-2">{post.content}</p>
            <div className="flex gap-x-3">
             {post.tags.map((tag)=> {
-                return <span className="text-blue-700 underline font-bold text-xs">{`#${tag}`}</span>
+                return(
+                <NavLink to={`/tags/${tag.replaceAll(" ","-")}`}>
+                 <span className="text-blue-700 underline font-bold text-xs">{`#${tag}`}</span>
+                </NavLink>
+                );
             })}
            </div>
         </div>

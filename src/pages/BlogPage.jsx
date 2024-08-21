@@ -55,8 +55,8 @@ const BlogPage = () => {
     return (
        <div>
            <Header/>
-           <div>
-             <button
+           <div className="mt-[300px]">
+             <button className="font-bold"
              onClick={()=>navigation(-1)}
              >Back</button>
            </div>
@@ -65,7 +65,7 @@ const BlogPage = () => {
                 blog ? (<Card post={blog}/>):(<div>Card Not Found</div>)
             )
            }
-           <h2>Releated Blogs</h2>
+           <h2 className="font-bold size-3xl">Releated Blogs</h2>
            {
             relatedBlogs.map((post)=> <Card post={post}/>)
            }
